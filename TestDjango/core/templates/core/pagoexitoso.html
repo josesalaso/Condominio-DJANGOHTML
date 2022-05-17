@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+	
+
+</head>  
+<body>
+    <form class="formulario">
+    
+    <h1>¡Correcto!</h1>
+         <img class="check" src="{% static 'core/img/check-mark.png' %}" alt="chek.png">
+    <div class="contenedor">
+         <h2>Tu pago fue hecho exitosamente</h2>
+        <h2>Presione el boton para volver al menú</h2>
+         </div>
+         <center>
+         <a href="{% url 'index' %}" type="submit" value="Volver al inicio" class="button">Volver al inicio</a>
+        </center>
+     </div>
+    </form>
+</body>
+</html>
