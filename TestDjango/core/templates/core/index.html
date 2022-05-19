@@ -49,17 +49,6 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <b>INTERFACES</b>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'interfazadministradorcondominio' %}">Interfaz ADMINISTRADOR CONDOMINIO</a>
-            <a class="dropdown-item" href="{% url 'interfazconcerje' %}">Interfaz CONCERJE</a>
-            <a class="dropdown-item" href="{% url 'interfazdirectiva' %}">Interfaz DIRECTIVA</a>
-          </div>
-        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -119,10 +108,10 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-
     </div>
-
-    <h1>USUARIO RESIDENTE</h1>
+  </div>
+    
+    {% if perms.core.add_citas %}
     <h1>RESERVA ESPACIOS Y GASTOS COMUN</h1>
     <br>
     <div class="container">
@@ -214,8 +203,54 @@
     <br>
     <br>
 
+    {% endif%}
+    
+    {% if perms.core.delete_espacio %}
 
+    <hr size="10px" color="black" />
+    <br>
+    <div class="container" id=cajas>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR GASTO COMUN MENSUAL</h5>
+                <a href="{% url 'gastocomun' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">AGREGAR GASTO COMUN MENSUAL</h5>
+                <a href="{% url 'agregargastocomunmensual' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR/RESERVAR ESPACIOS CONDOMINIO</h5>
+                <a href="{% url 'reservarhora' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+    </div>
+    <br>
 
+    {% endif %}
+    {% if perms.core.delete_gastocomun %}
+    <div class="container" id=cajas>
+      <div class="card">
+         
+
+          <div class="card-body">
+              <h5 class="card-title">CONSULTAR GASTO COMUN MENSUAL</h5>
+              <a href="{% url 'gastocomun' %}" class="btn btn-primary">IR</a>
+          </div>
+      </div>
+      <div class="card">
+
+          <div class="card-body">
+              <h5 class="card-title">CONSULTAR/RESERVAR ESPACIOS CONDOMINIO</h5>
+              <a href="{% url 'reservarhora' %}" class="btn btn-primary">IR</a>
+          </div>
+      </div>
+  </div>
+    {% endif %}
 
 
     <hr size="10px" color="black" />

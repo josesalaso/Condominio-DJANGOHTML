@@ -65,6 +65,11 @@
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
+                    <!--Boton de Modo noche-->
+          <button class="switch" id="switch" onsubmit="return false;">
+            <span><i class="fas fa-sun"></i></span>
+            <span><i class="fas fa-moon"></i></span>
+          </button>
                   <!--Buscador-->
                   <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -111,7 +116,7 @@
     <br>
     <div class="container">
         <table class="table">
-            <thead>
+            <thead class="thead">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Pago</th>
@@ -122,7 +127,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tbody">
                 {% for es in espacio %}
                 <tr>
                     <td>{{es.idespacio}}</td>
@@ -140,10 +145,6 @@
 
     <hr size="10px" color="black" />
 
-    <br>
-    <h4>Quienes Somos</h4>
-    <br>
-    <br>
 
     
 

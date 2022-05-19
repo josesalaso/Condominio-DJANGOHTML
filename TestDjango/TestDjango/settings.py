@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
+CRiSPY_TEMPLATE_PACK = 'bootstrap4'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -60,13 +62,13 @@ ROOT_URLCONF = 'TestDjango.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+     'BACKEND': 'django.template.backends.django.DjangoTemplates',
+       'DIRS': [],
+       'APP_DIRS': True,
+       'OPTIONS': {
+           'context_processors': [
+               'django.template.context_processors.debug',
+               'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -81,15 +83,22 @@ WSGI_APPLICATION = 'TestDjango.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': 'xe',
+#        'USER': 'c##pepe2',
+#        'PASSWORD': 'pepe1234',
+#        'HOST': '127.0.0.1',
+#        'PORT': '1521',
+#    }
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'xe',
-        'USER': 'c##pepe2',
-        'PASSWORD': 'pepe1234',
-        'HOST': '127.0.0.1',
-        'PORT': '1521',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
 
 
 

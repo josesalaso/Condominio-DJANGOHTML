@@ -1,6 +1,8 @@
+from ast import Return
 from django.shortcuts import render, redirect
 from .models import Espacio, Citas, Gastocomun
 from .forms import EspacioForm, CitasForm, GastocomunForm
+from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
 
 def index(request):
@@ -12,6 +14,7 @@ def interfazdirectiva(request):
 def interfazconcerje(request):
     return render(request, 'core/interfazconcerje.html')
 
+
 def reservarhora(request):
     # accediendo al objeto que contiene los datos de la base de datos
     # el metodo all traera todas las horas que estan en la tabla
@@ -22,6 +25,7 @@ def reservarhora(request):
     }
     # ahora lo agregamos para que se envie al templateee
     return render(request, 'core/reservarhora.html', datos)
+   
 def confirmarhora(request):
     # el view sera el responsable de entregar el form al template
     datos = {'form': CitasForm}
@@ -120,6 +124,9 @@ def agregarespacio(request):
             else:
                 datos['mensaje']="Ya existe un registro asociado a ese codigo"    + idespacio  
     return render(request, 'core/agregarespacio.html', datos)
+
+def pagoexitoso(request):
+    return render(request, 'core/pagoexitoso.html')
 
 
 
