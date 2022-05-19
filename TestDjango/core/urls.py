@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, reservarhora, pagaranularhora, confirmarhora, delhora, agregargastocomunmensual, gastocomun, interfazadministradorcondominio, interfazconcerje, agregarespacio, interfazdirectiva
+from .views import index, reservarhora, pagaranularhora, confirmarhora, delhora, agregargastocomunmensual, gastocomun, interfazadministradorcondominio, interfazconcerje, agregarespacio, interfazdirectiva, pagoexitoso
 
 
 urlpatterns = [
@@ -14,5 +14,6 @@ urlpatterns = [
     path('interfazconcerje', interfazconcerje, name="interfazconcerje"),
     path('agregarespacio', agregarespacio, name="agregarespacio"),
     path('interfazdirectiva', interfazdirectiva, name="interfazdirectiva"),
+    path('pagoexitoso', pagoexitoso, name="pagoexitoso"),
 
 ]
