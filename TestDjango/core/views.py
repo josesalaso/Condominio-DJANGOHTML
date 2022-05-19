@@ -11,6 +11,8 @@ def interfazdirectiva(request):
     return render(request, 'core/interfazdirectiva.html')
 def interfazconcerje(request):
     return render(request, 'core/interfazconcerje.html')
+def pagoexitoso(request):
+    return render(request, 'core/pagoexitoso.html')
 
 def reservarhora(request):
     # accediendo al objeto que contiene los datos de la base de datos
