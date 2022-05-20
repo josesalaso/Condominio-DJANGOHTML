@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import index, pagoexitoso, reservarhora, pagaranularhora, confirmarhora, delhora, agregargastocomunmensual, gastocomun, interfazadministradorcondominio, interfazconcerje, agregarespacio, interfazdirectiva
+from .views import index, pagoexitoso, reservarhora, pagaranularhora, confirmarhora, delhora, agregargastocomunmensual, gastocomun, interfazadministradorcondominio, interfazconcerje, agregarespacio, interfazdirectiva, iniciarsesion, ValidarUsuario
 
 
 urlpatterns = [
-    path('', index, name="index"),
+    path('', iniciarsesion, name="iniciarsesion"),
+    path('index', index, name="index"),
+    path('ValidarUsuario', ValidarUsuario, name="ValidarUsuario"),
     path('reservarhora', reservarhora, name="reservarhora"),
     path('confirmarhora', confirmarhora, name="confirmarhora"),
     path('pagaranularhora', pagaranularhora, name="pagaranularhora"),

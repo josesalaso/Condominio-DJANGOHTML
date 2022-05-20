@@ -375,17 +375,8 @@ h6::after{
 	padding: 1%;
 }
 
-.tbody{
-	color: #ffffff;}
-	body.dark .tbody{
-		color: rgb(51, 44, 44);
-	}
 
-.thead{
-	color: #ffffff;}
-	body.dark .tbody{
-		color: rgb(30, 29, 29);
-	}
+
 .card-title{
 	color: #eaf5f2;}
 	body.dark .card-title{

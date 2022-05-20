@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 def index(request):
     return render(request, 'core/index.html')
+def iniciarsesion(request):
+    return render(request, 'core/iniciarsesion.html')
 def interfazadministradorcondominio(request):
     return render(request, 'core/interfazadministradorcondominio.html')
 def interfazdirectiva(request):
@@ -130,6 +132,15 @@ def agregarespacio(request):
 def pagoexitoso(request):
     return render(request, 'core/pagoexitoso.html')
 
-
-
+def ValidarUsuario(request):
+    if request.user.is_authenticated:
+      if request.user.username  == "jose":
+        return redirect('index')
+      if request.user.username  == "dabrian":
+        return redirect('interfazadministradorcondominio')
+      if request.user.username  == "luis":
+        return redirect('interfazconcerje')
+      if request.user.username  == "cristobal":
+        return redirect('interfazdirectiva')
+    return redirect('login')
 
