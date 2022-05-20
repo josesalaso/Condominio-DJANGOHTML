@@ -142,5 +142,7 @@ def ValidarUsuario(request):
         return redirect('interfazconcerje')
       if request.user.username  == "cristobal":
         return redirect('interfazdirectiva')
+      elif request.user.username == "admin":
+        return redirect('/admin/')
     return redirect('login')
 
